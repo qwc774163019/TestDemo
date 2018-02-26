@@ -2,13 +2,11 @@ package com.qi.wenchao.testdemo;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
 
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.squareup.leakcanary.LeakCanary;
 
 /**
  * @author chao
@@ -20,8 +18,8 @@ public class MyApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
-        initImageLoader(this);
-        LeakCanary.install(this);//添加内存泄漏检测工具
+//        initImageLoader(this);
+//        LeakCanary.install(this);//添加内存泄漏检测工具
     }
 
     /**
@@ -47,6 +45,6 @@ public class MyApplication extends Application{
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        MultiDex.install(this);
+//        MultiDex.install(this);
     }
 }

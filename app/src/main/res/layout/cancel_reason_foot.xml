@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rl_reason"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:visibility="visible">
+
+    <EditText
+        android:id="@+id/et_reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_background"
+        android:gravity="top"
+        android:hint="您可以输入100个字"
+        android:imeOptions="actionSend"
+        android:lines="4"
+        android:maxLength="100"
+        android:paddingLeft="8dp"
+        android:paddingTop="7dp"
+        android:textColorHint="#c8c8c8"/>
+
+</RelativeLayout>

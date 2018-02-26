@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f5f5f5">
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/layout_red_bg_and_corners"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="10dp"
+        android:textSize="18sp"/>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_above="@+id/btn_submit"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e1e1e1"/>
+                <TextView
+                    android:id="@+id/tip_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="订单已取消"
+                    android:textColor="#ff5252"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tip_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="请反馈原因，我们会努力改进。"
+                    android:textColor="#ff999999"
+                    android:textSize="14sp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#e1e1e1"/>
+
+                <ListView
+                    android:id="@+id/lv"
+                    android:layout_marginLeft="12dp"
+                    android:scrollbars="none"
+                    android:divider="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/et_reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_background"
+                        android:gravity="top"
+                        android:hint="您可以输入100个字"
+                        android:imeOptions="actionSend"
+                        android:lines="4"
+                        android:maxLength="100"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="7dp"
+                        android:textColorHint="#c8c8c8"/>
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e1e1e1"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_tip_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_reason"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="42dp"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:visibility="visible">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e1e1e1"/>
+                <TextView
+                    android:id="@+id/tip_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:text="以后不想该司机再服务我"
+                    android:textColor="#323232"
+                    android:textSize="15sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="#e1e1e1"/>
+
+                <RadioButton
+                    android:id="@+id/raBtn9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@null"
+                    android:button="@null"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/xml_red_check_old"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:text="拉黑Ta"
+                    android:textColor="#323232"
+                    android:textSize="14sp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e1e1e1"/>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

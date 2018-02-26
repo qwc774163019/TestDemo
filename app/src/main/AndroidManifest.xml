@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.qi.wenchao.testdemo"
+<manifest xmlns:tools="http://schemas.android.com/tools" package="com.qi.wenchao.testdemo"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" tools:ignore="ProtectedPermissions"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <application
         android:name=".MyApplication"
@@ -16,6 +19,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+
+        <activity android:name=".RadioActivity">
         </activity>
     </application>
 

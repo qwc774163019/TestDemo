@@ -24,6 +24,11 @@
 
         <activity android:name=".RadioActivity">
         </activity>
+        <activity android:name=".SecondActivity"
+        android:theme="@android:style/Theme.Translucent">
+        </activity>
+        <activity android:name=".ThreeActivity">
+        </activity>
     </application>
 
 </manifest>

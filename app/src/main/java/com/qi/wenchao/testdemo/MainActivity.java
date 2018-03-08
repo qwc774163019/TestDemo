@@ -10,6 +10,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,10 +20,13 @@ public class MainActivity extends AppCompatActivity {
     TextView tv;
     TextView tv1;
     Button btn;
+    Button btn1;
+    Button btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.i("QWC","Main---onCreate");
         tv= (TextView) findViewById(R.id.tv);
         tv1= (TextView) findViewById(R.id.tv1);
         tv1.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG|Paint.ANTI_ALIAS_FLAG);
@@ -34,15 +38,29 @@ public class MainActivity extends AppCompatActivity {
 //        SpannableString spannableString = setTextForeground(content, start, start + msg.length(), Color.parseColor("#ff5252"));
 //        tv.setText(spannableString);
 
-//        String str="3元";
-//        String money="3";
-//        int start=str.indexOf(money);
-//        tv.setText(setTextSize(str,start+money.length(),str.length(),(int)sp2px(this,15f)));
+        String str="103元";
+        String money="103";
+        int start=str.indexOf(money);
+        tv.setText(setTextSize(str,start+money.length(),str.length(),(int)sp2px(this,15f)));
         btn= (Button) findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,RadioActivity.class));
+            }
+        });
+        btn1= (Button) findViewById(R.id.btn1);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,SecondActivity.class));
+            }
+        });
+        btn2= (Button) findViewById(R.id.btn2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ThreeActivity.class));
             }
         });
     }
@@ -74,5 +92,41 @@ public class MainActivity extends AppCompatActivity {
         if (context == null)
             return 0;
         return spValue * context.getResources().getDisplayMetrics().scaledDensity;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("QWC","Main---onStop");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("QWC","Main---onPause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("QWC","Main---onResume");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("QWC","Main---onStart");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("QWC","Main---onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("QWC","Main---onDestroy");
     }
 }

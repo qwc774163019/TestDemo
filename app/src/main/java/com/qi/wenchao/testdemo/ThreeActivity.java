@@ -1,10 +1,13 @@
 package com.qi.wenchao.testdemo;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 /**
  * @author chao
@@ -13,11 +16,19 @@ import android.util.Log;
  * @todo:
  */
 public class ThreeActivity extends Activity {
+    Button dialog;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three);
         Log.i("QWC","Three---onCreate");
+        dialog= (Button) findViewById(R.id.dialog);
+        dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Dialog(ThreeActivity.this).show();
+            }
+        });
     }
 
     @Override

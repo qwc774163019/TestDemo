@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:tools="http://schemas.android.com/tools" package="com.qi.wenchao.testdemo"
           xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--
+    Allows Glide to monitor connectivity status and restart failed requests if users go from a
+    a disconnected to a connected network state.
+    -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" tools:ignore="ProtectedPermissions"/>
@@ -24,8 +31,8 @@
 
         <activity android:name=".RadioActivity">
         </activity>
-        <activity android:name=".SecondActivity"
-        android:theme="@android:style/Theme.Translucent">
+        <activity android:name=".SecondActivity">
+        <!--android:theme="@android:style/Theme.Translucent">-->
         </activity>
         <activity android:name=".ThreeActivity">
         </activity>

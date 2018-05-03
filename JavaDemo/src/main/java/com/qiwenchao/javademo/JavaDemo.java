@@ -24,5 +24,28 @@ public class JavaDemo {
             e.printStackTrace();
         }
         System.out.println(china);
+
+
+        final ThreadLocal<Boolean> threadLocal=new ThreadLocal<Boolean>();
+        threadLocal.set(true);
+        System.out.println("main---"+threadLocal.get());
+
+        new Thread("thread1"){
+            @Override
+            public void run() {
+                super.run();
+                threadLocal.set(false);
+                System.out.println("thread1---"+threadLocal.get());
+            }
+        }.start();
+
+        new Thread("thread2"){
+            @Override
+            public void run() {
+                super.run();
+                System.out.println("thread2---"+threadLocal.get());
+            }
+        }.start();
+
     }
 }

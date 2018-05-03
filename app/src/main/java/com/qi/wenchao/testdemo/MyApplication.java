@@ -3,6 +3,8 @@ package com.qi.wenchao.testdemo;
 import android.app.Application;
 import android.content.Context;
 
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -15,6 +17,8 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
  * @version: Version 7.0
  */
 public class MyApplication extends Application{
+
+
     @Override
     public void onCreate() {
         super.onCreate();

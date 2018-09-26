@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * @author chao
  * @Description {todo}
@@ -29,6 +32,18 @@ public class ThreeActivity extends Activity {
                 new Dialog(ThreeActivity.this).show();
             }
         });
+        String address = "";
+        try {
+            JSONObject jo = new JSONObject();
+            jo.put("city", "北京市");
+            jo.put("place_name", "方恒");
+            jo.put("latitude", "39.12344");
+            jo.put("longitude", "116.32334");
+            address = jo.toString();
+            Log.i("QWC",address);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

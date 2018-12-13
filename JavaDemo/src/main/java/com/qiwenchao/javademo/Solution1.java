@@ -38,17 +38,39 @@ class Solution1 {
         return lN1;
     }
 
+    static ListNode head, tail;
     public static void main(String[] args){
-        ListNode l1=new ListNode(2);
-        l1.next=new ListNode(4);
-        l1.next.next=new ListNode(3);
-        l1.next.next.next=new ListNode(0);
-        ListNode l2=new ListNode(5);
-        l2.next=new ListNode(6);
-        l2.next.next=new ListNode(4);
-        l2.next.next.next=new ListNode(0);
-        ListNode listNode = addTwoNumbers(l1, l2);
-        System.out.print(listNode);
+//        ListNode l1=new ListNode(2);
+//        l1.next=new ListNode(4);
+//        l1.next.next=new ListNode(3);
+//        l1.next.next.next=new ListNode(0);
+//        ListNode l2=new ListNode(5);
+//        l2.next=new ListNode(6);
+//        l2.next.next=new ListNode(4);
+//        l2.next.next.next=new ListNode(0);
+//
+//        ListNode listNode = addTwoNumbers(l1, l2);
+//        System.out.print(listNode);
+        create(2);
+        create(4);
+        create(3);
+        ListNode tmp = head;
+        while(tmp != null) {
+            System.out.println(tmp.val);
+            tmp = tmp.next;
+        }
+    }
+
+    public static ListNode create(int val) {
+        ListNode n = new ListNode(val);
+        if(head == null) {
+            head = n;
+            tail = head;
+        } else {
+            tail.next = n;
+        }
+        tail = n;
+        return n;
     }
 
     public static class ListNode {
